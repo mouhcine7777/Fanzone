@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// Local font — Forsela
+const forselafont = localFont({
+  src: "./fonts/Forsela.ttf",
+  variable: "--font-forsela",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Main font — Montserrat
+const montserrat = Montserrat({
   subsets: ["latin"],
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.variable} ${forselafont.variable} antialiased`}
       >
         {children}
       </body>
