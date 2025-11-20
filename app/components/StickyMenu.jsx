@@ -25,7 +25,7 @@ export default function StickyNavigation() {
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
-      const navHeight = isScrolled ? 80 : 96; // Adjust based on your nav height
+      const navHeight = isScrolled ? 80 : 96;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - navHeight;
 
@@ -79,7 +79,8 @@ export default function StickyNavigation() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-white hover:text-[#0dc768] font-medium transition-colors duration-300 relative group"
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="text-white hover:text-[#0dc768] font-medium transition-colors duration-300 relative group cursor-pointer"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0dc768] group-hover:w-full transition-all duration-300" />
@@ -133,8 +134,11 @@ export default function StickyNavigation() {
             <a
               key={item.name}
               href={item.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-white text-2xl sm:text-3xl font-bold hover:text-[#0dc768] transition-all duration-300 transform hover:scale-110"
+              onClick={(e) => {
+                handleNavClick(e, item.href);
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-white text-2xl sm:text-3xl font-bold hover:text-[#0dc768] transition-all duration-300 transform hover:scale-110 cursor-pointer"
               style={{
                 animation: isMobileMenuOpen
                   ? `slideIn 0.5s ease-out ${index * 0.1}s backwards`
