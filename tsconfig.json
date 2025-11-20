@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/components/SponsorsSection.jsx", "app/components/AboutFanzone.jsx"  ],
   "exclude": ["node_modules"]
 }

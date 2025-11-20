@@ -8,6 +8,11 @@ const forselafont = localFont({
   src: "./fonts/Forsela.ttf",
   variable: "--font-forsela",
 });
+// Local font — Edo
+const edofont = localFont({
+  src: "./fonts/edo.ttf",
+  variable: "--font-edo",
+});
 
 // Main font — Montserrat
 const montserrat = Montserrat({
@@ -28,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${forselafont.variable} antialiased`}
+        className={`${montserrat.variable} ${forselafont.variable} ${edofont.variable} antialiased`}
       >
         {children}
       </body>

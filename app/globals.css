@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-montserrat);
   --font-forsela: var(--font-forsela);
+  --font-edo: var(--font-edo);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,4 +29,7 @@ body {
 .font-forsela {
   font-family: var(--font-forsela);
   letter-spacing: 0.05em; /* Adjust spacing — try 0.03em to 0.08em */
+}
+.font-edo {
+  font-family: var(--font-edo);
 }
