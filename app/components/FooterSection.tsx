@@ -11,7 +11,7 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Facebook, href: 'https://www.instagram.com/fanzone_arena', label: 'Facebook' },
     { icon: Instagram, href: '#', label: 'Instagram' },
   ];
 
