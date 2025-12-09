@@ -130,7 +130,7 @@ export default function Footer() {
                   <Phone className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#0dc768' }} />
                   <div>
                     <p className="text-white font-medium text-sm">Téléphone</p>
-                    <a href="tel:+212522000000" className="text-gray-400 text-xs hover:text-[#0dc768] transition-colors">
+                    <a href="tel:+212666577132" className="text-gray-400 text-xs hover:text-[#0dc768] transition-colors">
                     +212 6 66 57 71 32
                     </a>
                   </div>
