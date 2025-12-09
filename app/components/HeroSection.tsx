@@ -57,21 +57,6 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <button 
-                className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base text-white transition-all duration-300 hover:scale-105"
-                style={{ 
-                  backgroundColor: '#800000',
-                }}
-              >
-                Réserver Maintenant
-              </button>
-              <button className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-white rounded-lg font-semibold text-sm sm:text-base text-white hover:bg-white hover:text-black transition-all duration-300">
-                En Savoir Plus
-              </button>
-            </div>
           </div>
         </div>
       </div>

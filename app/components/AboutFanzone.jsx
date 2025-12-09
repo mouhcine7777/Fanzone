@@ -16,8 +16,8 @@ export default function EspacesSliderSection() {
       id: 1,
       icon: Tv,
       title: "CUBE 360°",
-      subtitle: "Vivez chaque match comme si vous y étiez",
-      description: "Une expérience immersive unique avec écrans géants et son surround",
+      subtitle: "Vivez chaque match comme au stade.",
+      description: "Immersion totale, écrans géants et son surround.",
       image: "cube360.jpg",
       color: "#0dc768"
     },
@@ -26,16 +26,16 @@ export default function EspacesSliderSection() {
       icon: Gamepad2,
       title: "GAMING ZONE",
       subtitle: "Tournois & Challenges",
-      description: "Consoles dernière génération et compétitions eSport en continu",
+      description: "Consoles new génération, jeux immersifs et challenges e-sport.  ",
       image: "gaming.jpg",
       color: "#800000"
     },
     {
       id: 3,
       icon: Camera,
-      title: "PHOTO SPOTS",
-      subtitle: "Instagrammable",
-      description: "Des décors uniques pour immortaliser vos moments",
+      title: "PHOTOCELLULE",
+      subtitle: "Souvenir inoubliable",
+      description: "Passez par notre photocall CAN et capturez l'énergie, la joie, et les couleurs de la Fan Zone Can Velodrome Casablanca.",
       image: "instagram.jpg",
       color: "#0dc768"
     },
@@ -44,7 +44,7 @@ export default function EspacesSliderSection() {
       icon: UtensilsCrossed,
       title: "FOODCOURT",
       subtitle: "Saveurs & Convivialité",
-      description: "Une sélection de cuisines du monde dans une ambiance festive",
+      description: "Sélection gourmande, servie dans une ambiance festive.",
       image: "foodcourt.jpg",
       color: "#800000"
     }

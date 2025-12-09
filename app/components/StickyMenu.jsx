@@ -18,7 +18,8 @@ export default function StickyNavigation() {
     { name: 'Accueil', href: '#home' },
     { name: 'À Propos', href: '#a-propos' },
     { name: 'Espaces', href: '#espaces' },
-    { name: 'Partenariat', href: '#partenariat' },
+    { name: 'Partenaires', href: '#partenaires' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const handleNavClick = (e, href) => {
@@ -91,11 +92,11 @@ export default function StickyNavigation() {
             {/* CTA Button - Desktop */}
             <div className="hidden lg:flex items-center gap-4">
               <button
-                className="px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#800000]/50 flex items-center gap-2"
-                style={{ backgroundColor: '#800000' }}
+                disabled
+                className="px-6 py-3 rounded-lg font-semibold text-white/50 cursor-not-allowed flex items-center gap-2 bg-gray-600"
               >
                 <Ticket className="w-4 h-4" />
-                Réserver
+                Billetterie Bientôt
               </button>
             </div>
 
@@ -150,17 +151,17 @@ export default function StickyNavigation() {
           ))}
 
           <button
+            disabled
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-8 px-8 py-4 rounded-lg font-bold text-lg text-white transition-all duration-300 hover:scale-105 flex items-center gap-3"
+            className="mt-8 px-8 py-4 rounded-lg font-bold text-lg text-white/50 cursor-not-allowed flex items-center gap-3 bg-gray-600"
             style={{
-              backgroundColor: '#800000',
               animation: isMobileMenuOpen
                 ? `slideIn 0.5s ease-out ${navItems.length * 0.1}s backwards`
                 : 'none',
             }}
           >
             <Ticket className="w-5 h-5" />
-            Réserver Maintenant
+            Billetterie Bientôt
           </button>
 
           {/* Info Items in Mobile Menu */}

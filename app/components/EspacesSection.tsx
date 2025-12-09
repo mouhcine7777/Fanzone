@@ -65,15 +65,6 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button className="group px-5 sm:px-6 py-2.5 sm:py-3 bg-[#0dc768] text-white rounded-lg font-bold text-sm sm:text-base hover:bg-[#0dc768]/90 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
-                Découvrir l'expérience
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-gray-800 rounded-lg font-bold text-sm sm:text-base border-2 border-gray-200 hover:border-[#0dc768] transition-all duration-300 hover:scale-105">
-                Nos espaces
-              </button>
-            </div>
           </div>
 
           {/* Right Content - Stats */}
@@ -110,14 +101,14 @@ export default function AboutSection() {
                       10
                     </div>
                     <div className="text-gray-600 font-semibold uppercase text-xs tracking-wide">
-                      Zones VIP
+                      Zones premuim
                     </div>
                     <div className="mt-2 h-1 w-12 mx-auto bg-gradient-to-r from-[#800000] to-transparent rounded-full" />
                   </div>
 
                   <div className="text-center group cursor-pointer">
                     <div className="text-3xl sm:text-4xl lg:text-5xl font-black mb-1 bg-gradient-to-br from-[#800000] to-[#800000]/70 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
-                      24/7
+                      7/7
                     </div>
                     <div className="text-gray-600 font-semibold uppercase text-xs tracking-wide">
                       Live

@@ -6,14 +6,13 @@ export default function Footer() {
     { name: 'Accueil', href: '#home' },
     { name: 'À Propos', href: '#a-propos' },
     { name: 'Espaces', href: '#espaces' },
-    { name: 'Partenariat', href: '#partenariat' },
+    { name: 'Partenariat', href: '#partenaires' },
     { name: 'Contact', href: '#contact' },
   ];
 
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Youtube, href: '#', label: 'Youtube' },
   ];
 
   return (
@@ -100,7 +99,7 @@ export default function Footer() {
                   <Clock className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#0dc768' }} />
                   <div>
                     <p className="text-white font-medium text-sm">Horaires</p>
-                    <p className="text-gray-400 text-xs">Tous les jours, 14h — 01h</p>
+                    <p className="text-gray-400 text-xs">Tous les jours</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -132,7 +131,7 @@ export default function Footer() {
                   <div>
                     <p className="text-white font-medium text-sm">Téléphone</p>
                     <a href="tel:+212522000000" className="text-gray-400 text-xs hover:text-[#0dc768] transition-colors">
-                      +212 522 00 00 00
+                    +212 6 66 57 71 32
                     </a>
                   </div>
                 </div>
@@ -140,31 +139,11 @@ export default function Footer() {
                   <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#0dc768' }} />
                   <div>
                     <p className="text-white font-medium text-sm">Email</p>
-                    <a href="mailto:contact@fanzonearena.ma" className="text-gray-400 text-xs hover:text-[#0dc768] transition-colors">
+                    <a href="mailto:contact@fanzonecan.com" className="text-gray-400 text-xs hover:text-[#0dc768] transition-colors">
                       contact@fanzonecan.com
                     </a>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Newsletter Section */}
-          <div className="relative bg-gradient-to-r from-[#800000]/20 via-[#0dc768]/20 to-[#800000]/20 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8 mb-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="text-center md:text-left">
-                <h4 className="font-bold text-xl mb-2">Restez Informés</h4>
-                <p className="text-gray-400 text-sm">Inscrivez-vous pour recevoir les dernières actualités et offres exclusives</p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-                <input
-                  type="email"
-                  placeholder="Votre email"
-                  className="px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-[#0dc768] transition-colors w-full sm:w-64 text-sm"
-                />
-                <button className="px-6 py-3 bg-[#0dc768] text-white rounded-lg font-semibold text-sm hover:bg-[#0dc768]/90 transition-all duration-300 hover:scale-105 whitespace-nowrap">
-                  S'inscrire
-                </button>
               </div>
             </div>
           </div>
