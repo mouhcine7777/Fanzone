@@ -11,8 +11,8 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://www.instagram.com/fanzone_arena', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Facebook, href: 'https://www.facebook.com/fanzonearenavelodrome', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/fanzone_arena', label: 'Instagram' },
   ];
 
   return (
@@ -29,13 +29,7 @@ export default function Footer() {
             <div className="lg:col-span-1">
               <div className="flex items-center mb-4">
                 <div className="w-16 h-16">
-                  <img src="/logo1.png" alt="Fanzone Arena" className="w-full h-full object-contain" />
-                </div>
-                <div className="ml-3">
-                  <h3 className="font-edo text-2xl leading-none" style={{ color: '#0dc768' }}>
-                    FANZONE
-                    <span className="block text-white">ARENA</span>
-                  </h3>
+                  <img src="/logo.png" alt="Fanzone Arena" className="w-full h-full object-contain" />
                 </div>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">

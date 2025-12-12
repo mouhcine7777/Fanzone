@@ -56,21 +56,10 @@ export default function StickyNavigation() {
                 }`}
               >
                 <img
-                  src="/logo1.png"
+                  src="/logo.png"
                   alt="Fanzone Arena"
                   className="w-full h-full object-contain"
                 />
-              </div>
-              <div className="ml-3 sm:ml-4">
-                <h1
-                  className={`font-edo leading-none transition-all duration-500 ${
-                    isScrolled ? 'text-xl sm:text-2xl' : 'text-2xl sm:text-3xl'
-                  }`}
-                  style={{ color: '#0dc768' }}
-                >
-                  FANZONE
-                  <span className="block text-white">ARENA</span>
-                </h1>
               </div>
             </div>
 
