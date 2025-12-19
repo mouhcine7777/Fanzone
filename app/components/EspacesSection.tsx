@@ -30,7 +30,7 @@ export default function AboutSection() {
     <section 
       id="a-propos"
       ref={sectionRef} 
-      className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-50"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50 py-16 pb-20 lg:py-0"
     >
       {/* Colorful Energy */}
       <div className="absolute top-0 left-0 bottom-0 w-1/2 pointer-events-none z-0">

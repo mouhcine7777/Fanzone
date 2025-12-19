@@ -78,13 +78,13 @@ export default function StickyNavigation() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-4 xl:gap-8">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-white hover:text-[#0dc768] font-medium uppercase transition-colors duration-300 relative group cursor-pointer"
+                  className="text-white hover:text-[#0dc768] font-medium uppercase transition-colors duration-300 relative group cursor-pointer text-sm xl:text-base whitespace-nowrap"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0dc768] group-hover:w-full transition-all duration-300" />
@@ -96,10 +96,10 @@ export default function StickyNavigation() {
                 href={ticketUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-[#0dc768] hover:bg-[#0ab359] text-black font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#0dc768]/50 uppercase"
+                className="flex items-center gap-2 bg-[#0dc768] hover:bg-[#0ab359] text-black font-bold px-4 xl:px-6 py-2 xl:py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#0dc768]/50 uppercase whitespace-nowrap text-xs xl:text-base"
               >
-                <Ticket className="w-5 h-5" />
-                <span>Réserver mes billets</span>
+                <Ticket className="w-4 h-4 xl:w-5 xl:h-5" />
+                <span>Réserver</span>
               </a>
             </div>
 
@@ -158,7 +158,7 @@ export default function StickyNavigation() {
             href={ticketUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#0dc768] hover:bg-[#0ab359] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-lg mt-4 uppercase"
+            className="flex items-center gap-2 bg-[#0dc768] hover:bg-[#0ab359] text-black font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-base mt-4 uppercase whitespace-nowrap"
             style={{
               animation: isMobileMenuOpen
                 ? `slideIn 0.5s ease-out ${navItems.length * 0.1}s backwards`
@@ -166,7 +166,7 @@ export default function StickyNavigation() {
             }}
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <Ticket className="w-6 h-6" />
+            <Ticket className="w-5 h-5" />
             <span>Réserver mes billets</span>
           </a>
 

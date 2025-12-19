@@ -185,12 +185,14 @@ export default function EspacesSliderSection() {
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:from-black/90 transition-all duration-500" />
 
-                    {/* Decoration Image - Top Right Corner */}
-                    <img
-                      src={`/${espace.decoration}`}
-                      alt=""
-                      className="absolute top-0 right-0 w-20 sm:w-24 md:w-28 pointer-events-none z-10 opacity-90"
-                    />
+                    {/* Decoration Image - Top Right Corner - Only for cards with decoration */}
+                    {espace.decoration && (
+                      <img
+                        src={`/${espace.decoration}`}
+                        alt=""
+                        className="absolute top-0 right-0 w-20 sm:w-24 md:w-28 pointer-events-none z-10 opacity-90"
+                      />
+                    )}
 
                     {/* Content */}
                     <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-between">

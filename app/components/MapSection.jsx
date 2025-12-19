@@ -162,7 +162,7 @@ export default function ContactSection() {
           </div>
 
           {/* Title */}
-          <h2 className="font-edo text-5xl sm:text-6xl lg:text-8xl mb-6 leading-none">
+          <h2 className="font-edo text-4xl sm:text-6xl lg:text-8xl mb-6 leading-none">
             <span className="inline-block bg-[#0dc768] px-6 py-3 transform -skew-x-12 italic border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
               <span className="inline-block transform skew-x-12 text-white">CONTACTEZ-NOUS</span>
             </span>
@@ -208,7 +208,7 @@ export default function ContactSection() {
               
               <div className="relative">
                 <div className="mb-8">
-                  <h3 className="text-3xl sm:text-4xl font-black mb-4 leading-tight text-black uppercase">
+                  <h3 className="text-2xl sm:text-4xl font-black mb-4 leading-tight text-black uppercase">
                     Envoyez-nous un<br />
                     <span className="text-[#0dc768]">Message</span>
                   </h3>

@@ -26,12 +26,6 @@ export default function HeroSection() {
         <div className="absolute bottom-1/4 left-0 w-full h-40 bg-gradient-to-r from-orange-500/20 to-transparent blur-3xl" />
       </div>
 
-      {/* Decorations (ONLY corners) */}
-      <img
-        src="/decoration2.png"
-        alt=""
-        className="absolute bottom-0 right-0 w-40 sm:w-52 pointer-events-none z-10"
-      />
 
       {/* Content */}
       <div className="relative h-full flex items-center">
@@ -41,14 +35,14 @@ export default function HeroSection() {
             {/* TITLE (original red boxes) */}
             <h1
               className="font-edo text-white mb-3 leading-none
-                         text-5xl sm:text-6xl md:text-7xl lg:text-7xl"
+                         text-4xl sm:text-6xl md:text-7xl lg:text-7xl"
             >
-              <span className="inline-block bg-[#8b0000] px-4 py-2 transform -skew-x-12 italic">
-                <span className="inline-block transform skew-x-12">PLUS QU&apos;UN MATCH</span>
+              <span className="inline-block bg-[#8b0000] px-2 sm:px-4 py-2 transform -skew-x-12 italic">
+                <span className="inline-block transform skew-x-12 whitespace-nowrap">PLUS QU&apos;UN MATCH</span>
               </span>
 
               <span
-                className="block mt-2 inline-block bg-[#8b0000] px-4 py-2 transform -skew-x-12"
+                className="block mt-2 inline-block bg-[#8b0000] px-2 sm:px-4 py-2 transform -skew-x-12"
               >
                 <span className="inline-block transform skew-x-12 italic ">UNE ÉMOTION</span>
               </span>
@@ -83,22 +77,23 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Bold CTA Button */}
+            {/* Bold CTA Button - Mobile Responsive */}
             <div className="inline-block">
               <a
                 href={ticketUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-4 bg-gradient-to-r from-green-500 to-emerald-600
-                           text-white font-black text-lg sm:text-xl px-10 py-6 
+                className="inline-flex items-center gap-2 sm:gap-4 bg-gradient-to-r from-green-500 to-emerald-600
+                           text-white font-black text-sm sm:text-lg md:text-xl px-4 sm:px-10 py-3 sm:py-6 
                            transition-all duration-300 transform hover:scale-105
-                           shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]
-                           border-4 border-black uppercase tracking-wide"
+                           shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] 
+                           hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]
+                           border-2 sm:border-4 border-black uppercase tracking-wide"
                 style={{
-                  clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))'
+                  clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
                 }}
               >
-                <Ticket className="w-6 h-6 sm:w-8 sm:h-8" />
+                <Ticket className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
                 <span>Acheter vos billets</span>
               </a>
             </div>
