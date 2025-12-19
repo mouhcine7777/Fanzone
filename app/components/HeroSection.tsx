@@ -13,10 +13,10 @@ export default function HeroSection() {
         style={{ backgroundImage: 'url(/bg.jpg)' }}
       >
         {/* Lighter gradient - more transparent on the right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
         
-        {/* Additional shadow vignette on the left for text readability - stronger */}
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black/50 to-transparent" />
+        {/* Additional shadow vignette on the left for text readability - even stronger */}
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black/60 to-transparent" />
       </div>
 
       {/* Colorful Energy - Left Side Only */}
