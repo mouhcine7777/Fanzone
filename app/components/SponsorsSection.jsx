@@ -26,7 +26,7 @@ export default function PartnersSection() {
     };
   }, []);
 
-  const partners = [
+  const officialPartners = [
     {
       id: 1,
       name: 'RIA',
@@ -43,87 +43,153 @@ export default function PartnersSection() {
     }
   ];
 
+  const goldPartners = [
+    {
+      id: 3,
+      name: 'Hyundai',
+      logo: '/logos/hyundai.png',
+      delay: 0,
+      website: 'https://www.hyundai.com'
+    }
+  ];
+
   return (
     <section 
       id="partenaires"
       ref={sectionRef}
-      className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white"
+      className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-white"
     >
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-10 w-64 h-64 bg-[#0dc768]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-10 w-80 h-80 bg-[#800000]/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-[#0dc768]/5 to-[#800000]/5 rounded-full blur-3xl" />
+      {/* Subtle Colorful Energy Effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-0 w-1/3 h-40 bg-gradient-to-r from-green-500/5 to-transparent blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-1/3 h-40 bg-gradient-to-l from-red-600/5 to-transparent blur-3xl" />
       </div>
-
-      {/* Decorative Lines */}
-      <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#0dc768]/10 to-transparent hidden lg:block" />
-      <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#800000]/10 to-transparent hidden lg:block" />
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-[#0dc768]/10 to-[#800000]/10 border border-[#0dc768]/20">
-            <Award className="w-4 h-4 sm:w-5 sm:h-5" style={{ color: '#0dc768' }} />
-            <span className="text-xs sm:text-sm font-semibold text-gray-700 uppercase tracking-wider">
+          
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-[#0dc768] border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <Award className="w-4 h-4 text-black" />
+            <span className="text-sm font-black text-black uppercase tracking-wider">
               Partenaires
             </span>
           </div>
 
-          <h2 className="font-edo text-4xl sm:text-5xl lg:text-7xl mb-6 leading-tight">
-            <span className="text-gray-800">Nos </span>
-            <span className="bg-gradient-to-r from-[#0dc768] to-[#800000] bg-clip-text text-transparent">Partenaires</span>
+          {/* Title */}
+          <h2 className="font-edo text-4xl sm:text-5xl lg:text-7xl mb-6 leading-none">
+            <span className="inline-block bg-black text-white px-4 py-2 transform -skew-x-12 italic">
+              <span className="inline-block transform skew-x-12">NOS PARTENAIRES</span>
+            </span>
           </h2>
-
-          <div className="h-1 w-24 bg-gradient-to-r from-[#0dc768] to-[#800000] mx-auto mb-6" />
           
-          <p className="text-gray-600 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-700 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto font-medium">
             Ils nous font confiance pour créer des expériences inoubliables
           </p>
         </div>
 
-        {/* Partners Logos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-4xl mx-auto">
-          {partners.map((partner, index) => (
-            <div
-              key={partner.id}
-              className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              style={{ transitionDelay: `${partner.delay}ms` }}
-            >
-              <a 
-                href={partner.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group relative"
-              >
-                {/* Glow Effect on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0dc768]/20 to-[#800000]/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Card */}
-                <div className="relative bg-white rounded-3xl p-8 sm:p-12 shadow-xl border-2 border-gray-100 group-hover:border-[#0dc768]/30 transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl">
-                  {/* Decorative Corner Elements */}
-                  <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#0dc768] rounded-tl-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#800000] rounded-br-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Logo Container */}
-                  <div className="flex items-center justify-center h-32 sm:h-40">
-                    <img 
-                      src={partner.logo} 
-                      alt={`${partner.name} logo`}
-                      className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                  
-                  {/* Sparkle Effect on Hover */}
-                  <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <Sparkles className="w-5 h-5 text-[#0dc768] animate-pulse" />
-                  </div>
-                </div>
-              </a>
+        {/* Official Partners Section */}
+        <div className="mb-16">
+          <div className={`text-center mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="inline-flex items-center gap-2 mb-3 px-4 py-2 bg-[#0dc768] border-2 border-black">
+              <span className="text-xs font-black text-black uppercase tracking-wider">
+                Partenaires Officiels
+              </span>
             </div>
-          ))}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-4xl mx-auto">
+            {officialPartners.map((partner) => (
+              <div
+                key={partner.id}
+                className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                style={{ transitionDelay: `${partner.delay}ms` }}
+              >
+                <a 
+                  href={partner.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group relative"
+                >
+                  {/* Card - Bold Style */}
+                  <div className="relative bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 sm:p-12 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                    
+                    {/* Decorative Corner Accents */}
+                    <div className="absolute top-3 left-3 w-8 h-8 border-t-4 border-l-4 border-[#0dc768]" />
+                    <div className="absolute bottom-3 right-3 w-8 h-8 border-b-4 border-r-4 border-[#8b0000]" />
+                    
+                    {/* Logo Container */}
+                    <div className="flex items-center justify-center h-32 sm:h-40">
+                      <img 
+                        src={partner.logo} 
+                        alt={`${partner.name} logo`}
+                        className="max-w-full max-h-full object-contain transition-all duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                    
+                    {/* Sparkle Effect on Hover */}
+                    <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Sparkles className="w-5 h-5 text-[#0dc768]" />
+                    </div>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Gold Partner Section */}
+        <div>
+          <div className={`text-center mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '400ms' }}>
+            <div className="inline-flex items-center gap-2 mb-3 px-4 py-2 bg-yellow-400 border-2 border-black">
+              <span className="text-xs font-black text-black uppercase tracking-wider">
+                Partenaire Gold
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-4xl mx-auto">
+            {goldPartners.map((partner) => (
+              <div
+                key={partner.id}
+                className={`transition-all duration-1000 sm:col-start-1 sm:col-end-3 sm:max-w-md sm:mx-auto sm:w-full ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                style={{ transitionDelay: '600ms' }}
+              >
+                <a 
+                  href={partner.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group relative"
+                >
+                  {/* Card - Bold Style */}
+                  <div className="relative bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 sm:p-12 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                    
+                    {/* Decorative Corner Accents */}
+                    <div className="absolute top-3 left-3 w-8 h-8 border-t-4 border-l-4 border-yellow-400" />
+                    <div className="absolute bottom-3 right-3 w-8 h-8 border-b-4 border-r-4 border-yellow-400" />
+                    
+                    {/* Logo Container */}
+                    <div className="flex items-center justify-center h-32 sm:h-40">
+                      <img 
+                        src={partner.logo} 
+                        alt={`${partner.name} logo`}
+                        className="max-w-full max-h-full object-contain transition-all duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                    
+                    {/* Sparkle Effect on Hover */}
+                    <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Sparkles className="w-5 h-5 text-yellow-400" />
+                    </div>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

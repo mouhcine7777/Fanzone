@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export default function AboutSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,37 +30,53 @@ export default function AboutSection() {
     <section 
       id="a-propos"
       ref={sectionRef} 
-      className="relative bg-white h-screen flex items-center justify-center overflow-hidden"
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-50"
     >
-      {/* Decorative Lines */}
-      <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#0dc768]/20 to-transparent hidden lg:block" />
-      <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#800000]/20 to-transparent hidden lg:block" />
+      {/* Colorful Energy */}
+      <div className="absolute top-0 left-0 bottom-0 w-1/2 pointer-events-none z-0">
+        <div className="absolute top-1/4 left-0 w-full h-40 bg-gradient-to-r from-green-500/10 to-transparent blur-3xl" />
+        <div className="absolute top-1/2 left-0 w-full h-48 bg-gradient-to-r from-red-600/10 to-transparent blur-3xl" />
+        <div className="absolute bottom-1/4 left-0 w-full h-40 bg-gradient-to-r from-yellow-400/10 to-transparent blur-3xl" />
+      </div>
 
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+      {/* Decorative Images - Behind content */}
+      <img
+        src="/decoration3.png"
+        alt=""
+        className="absolute bottom-0 right-0 w-40 sm:w-52 md:w-64 pointer-events-none z-0 opacity-80"
+      />
+
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
           
           {/* Left Content */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
-            <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 px-3 py-1.5 rounded-full bg-gradient-to-r from-[#0dc768]/10 to-[#800000]/10 border border-[#0dc768]/20">
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" style={{ color: '#0dc768' }} />
-              <span className="text-xs font-semibold text-gray-700 uppercase tracking-wider">
+            
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-[#0dc768] border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              <Sparkles className="w-4 h-4 text-black" />
+              <span className="text-sm font-black text-black uppercase tracking-wider">
                 À Propos
               </span>
             </div>
 
-            <h2 className="font-edo text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6 leading-tight">
-              <span className="text-black">Là où la </span>
-              <span className="bg-gradient-to-r from-[#0dc768] to-[#0dc768]/80 bg-clip-text text-transparent">passion</span>
-              <br />
-              <span className="text-black">devient </span>
-              <span className="bg-gradient-to-r from-[#800000] to-[#800000]/80 bg-clip-text text-transparent">spectacle</span>
+            {/* Title */}
+            <h2 className="font-edo text-white mb-6 leading-none text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+              <span className="inline-block bg-[#0dc768] px-4 py-2 transform -skew-x-12 italic">
+                <span className="inline-block transform skew-x-12">LA PASSION</span>
+              </span>
+
+              <span className="block mt-2 inline-block bg-[#8b0000] px-4 py-2 transform -skew-x-12 italic">
+                <span className="inline-block transform skew-x-12">DEVIENT SPECTACLE</span>
+              </span> 
             </h2>
 
-            <div className="space-y-3 sm:space-y-4 mb-6">
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            {/* Description */}
+            <div className="space-y-4 mb-8">
+              <p className="text-base sm:text-lg text-gray-800 leading-relaxed font-medium">
                 La Fanzone Arena réinvente l'expérience sportive à Casablanca. Un écosystème unique où technologie de pointe et ambiance électrique se rencontrent.
               </p>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 Plus qu'un simple lieu de rassemblement, nous sommes le théâtre des émotions collectives et l'épicentre de la célébration sportive.
               </p>
             </div>
@@ -70,62 +86,65 @@ export default function AboutSection() {
           {/* Right Content - Stats */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
             <div className="relative">
-              {/* Main Stats Card */}
-              <div className="relative bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-gray-100">
-                <div className="absolute -top-4 -left-4 w-20 sm:w-24 h-20 sm:h-24 bg-gradient-to-br from-[#0dc768] to-[#0dc768]/50 rounded-2xl -z-10 blur-xl opacity-50" />
-                <div className="absolute -bottom-4 -right-4 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-br from-[#800000] to-[#800000]/50 rounded-2xl -z-10 blur-xl opacity-50" />
+              
+              {/* Main Stats Card - Bold Style */}
+              <div className="relative bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 sm:p-10">
                 
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-8">
+                  
+                  {/* Stat 1 */}
                   <div className="text-center group cursor-pointer">
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-black mb-1 bg-gradient-to-br from-[#0dc768] to-[#0dc768]/70 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-5xl sm:text-6xl lg:text-7xl font-black mb-2 text-[#0dc768] group-hover:scale-110 transition-transform duration-300">
                       5K+
                     </div>
-                    <div className="text-gray-600 font-semibold uppercase text-xs tracking-wide">
+                    <div className="text-black font-black uppercase text-xs sm:text-sm tracking-wider">
                       Capacité
                     </div>
-                    <div className="mt-2 h-1 w-12 mx-auto bg-gradient-to-r from-[#0dc768] to-transparent rounded-full" />
+                    <div className="mt-3 h-2 w-full bg-black" />
                   </div>
 
+                  {/* Stat 2 */}
                   <div className="text-center group cursor-pointer">
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-black mb-1 bg-gradient-to-br from-[#0dc768] to-[#0dc768]/70 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-5xl sm:text-6xl lg:text-7xl font-black mb-2 text-[#0dc768] group-hover:scale-110 transition-transform duration-300">
                       30+
                     </div>
-                    <div className="text-gray-600 font-semibold uppercase text-xs tracking-wide">
+                    <div className="text-black font-black uppercase text-xs sm:text-sm tracking-wider">
                       Jours
                     </div>
-                    <div className="mt-2 h-1 w-12 mx-auto bg-gradient-to-r from-[#0dc768] to-transparent rounded-full" />
+                    <div className="mt-3 h-2 w-full bg-black" />
                   </div>
 
+                  {/* Stat 3 */}
                   <div className="text-center group cursor-pointer">
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-black mb-1 bg-gradient-to-br from-[#800000] to-[#800000]/70 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-5xl sm:text-6xl lg:text-7xl font-black mb-2 text-[#8b0000] group-hover:scale-110 transition-transform duration-300">
                       10
                     </div>
-                    <div className="text-gray-600 font-semibold uppercase text-xs tracking-wide">
-                      Zones premuim
+                    <div className="text-black font-black uppercase text-xs sm:text-sm tracking-wider">
+                      Zones Premium
                     </div>
-                    <div className="mt-2 h-1 w-12 mx-auto bg-gradient-to-r from-[#800000] to-transparent rounded-full" />
+                    <div className="mt-3 h-2 w-full bg-black" />
                   </div>
 
+                  {/* Stat 4 */}
                   <div className="text-center group cursor-pointer">
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-black mb-1 bg-gradient-to-br from-[#800000] to-[#800000]/70 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-5xl sm:text-6xl lg:text-7xl font-black mb-2 text-[#8b0000] group-hover:scale-110 transition-transform duration-300">
                       7/7
                     </div>
-                    <div className="text-gray-600 font-semibold uppercase text-xs tracking-wide">
+                    <div className="text-black font-black uppercase text-xs sm:text-sm tracking-wider">
                       Live
                     </div>
-                    <div className="mt-2 h-1 w-12 mx-auto bg-gradient-to-r from-[#800000] to-transparent rounded-full" />
+                    <div className="mt-3 h-2 w-full bg-black" />
                   </div>
+                  
                 </div>
+              </div>
 
-                {/* Decorative corner elements */}
-                <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-[#0dc768] rounded-tl-lg" />
-                <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-[#800000] rounded-br-lg" />
+              {/* Floating Badge - Bold Style */}
+              <div className="absolute -top-6 -right-6 bg-[#0dc768] border-4 border-black text-black px-6 py-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                <div className="text-2xl sm:text-3xl font-black">21 DEC</div>
+                <div className="text-xs sm:text-sm font-black uppercase">Ouverture</div>
               </div>
-              {/* Floating Badge */}
-              <div className="absolute -top-6 -right-6 bg-gradient-to-br from-[#0dc768] to-[#0dc768]/80 text-white px-4 py-2 rounded-xl shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <div className="text-lg sm:text-xl font-black">21 DEC</div>
-                <div className="text-xs font-semibold opacity-90">Ouverture</div>
-              </div>
+
             </div>
           </div>
 

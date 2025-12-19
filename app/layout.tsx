@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Montserrat } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 /* ---------- Local Fonts ---------- */
@@ -44,6 +45,11 @@ export const metadata: Metadata = {
     "matchs CAN en direct",
     "fan zone Maroc",
     "événement football Casablanca",
+    "can fanzone",
+    "casablanca fanzone",
+    "fanzone",
+    "can casablanca",
+    "can 2025",
   ],
 
   robots: {
@@ -56,14 +62,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
       "max-video-preview": -1,
     },
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Fanzone CAN Casablanca 2025 | Parc & Vélodrome",
-    description:
-      "Vivez la Fanzone officielle de la CAN 2025 à Casablanca : matchs en direct, animations et expérience supporters.",
-    images: ["/og-image.jpg"],
   },
 
   alternates: {
@@ -79,6 +77,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr-MA">
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-X3NT1NJV9P"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-X3NT1NJV9P');
+          `}
+        </Script>
+      </head>
+
       <body
         className={`${montserrat.variable} ${forselafont.variable} ${edofont.variable} antialiased`}
       >

@@ -37,16 +37,30 @@ export default function StickyNavigation() {
     }
   };
 
+  const ticketUrl = "https://guichet.com/ma-fr/event/sport/fanzone-arena-vivez-la-can-2025-a-360-a-casablanca-5326";
+
   return (
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-black/95 backdrop-blur-md shadow-2xl py-3'
-            : 'bg-transparent py-6'
+            ? 'py-3'
+            : 'py-6'
         }`}
       >
-        <div className="w-full px-4 sm:px-6 lg:px-8">
+        {/* Gradient Background with Glass Effect */}
+        <div className={`absolute inset-0 transition-all duration-500 ${
+          isScrolled 
+            ? 'bg-gradient-to-r from-[#8b0000]/95 via-black/95 to-[#8b0000]/95 backdrop-blur-xl shadow-2xl shadow-[#0dc768]/20' 
+            : 'bg-transparent'
+        }`}>
+          {/* Animated Border Bottom */}
+          {isScrolled && (
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#0dc768] to-transparent animate-pulse"></div>
+          )}
+        </div>
+
+        <div className="w-full px-4 sm:px-6 lg:px-8 relative">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
@@ -70,23 +84,23 @@ export default function StickyNavigation() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-white hover:text-[#0dc768] font-medium transition-colors duration-300 relative group cursor-pointer"
+                  className="text-white hover:text-[#0dc768] font-medium uppercase transition-colors duration-300 relative group cursor-pointer"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0dc768] group-hover:w-full transition-all duration-300" />
                 </a>
               ))}
-            </div>
-
-            {/* CTA Button - Desktop */}
-            <div className="hidden lg:flex items-center gap-4">
-              <button
-                disabled
-                className="px-6 py-3 rounded-lg font-semibold text-white/50 cursor-not-allowed flex items-center gap-2 bg-gray-600"
+              
+              {/* Ticket Button - Desktop */}
+              <a
+                href={ticketUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-[#0dc768] hover:bg-[#0ab359] text-black font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#0dc768]/50 uppercase"
               >
-                <Ticket className="w-4 h-4" />
-                Billetterie Bientôt
-              </button>
+                <Ticket className="w-5 h-5" />
+                <span>Réserver mes billets</span>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -114,7 +128,7 @@ export default function StickyNavigation() {
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-black/95 backdrop-blur-lg"
+          className="absolute inset-0 bg-gradient-to-br from-[#8b0000]/95 via-black/95 to-[#8b0000]/95 backdrop-blur-lg"
           onClick={() => setIsMobileMenuOpen(false)}
         />
 
@@ -128,7 +142,7 @@ export default function StickyNavigation() {
                 handleNavClick(e, item.href);
                 setIsMobileMenuOpen(false);
               }}
-              className="text-white text-2xl sm:text-3xl font-bold hover:text-[#0dc768] transition-all duration-300 transform hover:scale-110 cursor-pointer"
+              className="text-white text-2xl sm:text-3xl font-bold uppercase hover:text-[#0dc768] transition-all duration-300 transform hover:scale-110 cursor-pointer"
               style={{
                 animation: isMobileMenuOpen
                   ? `slideIn 0.5s ease-out ${index * 0.1}s backwards`
@@ -139,19 +153,22 @@ export default function StickyNavigation() {
             </a>
           ))}
 
-          <button
-            disabled
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-8 px-8 py-4 rounded-lg font-bold text-lg text-white/50 cursor-not-allowed flex items-center gap-3 bg-gray-600"
+          {/* Ticket Button - Mobile */}
+          <a
+            href={ticketUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[#0dc768] hover:bg-[#0ab359] text-black font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-lg mt-4 uppercase"
             style={{
               animation: isMobileMenuOpen
                 ? `slideIn 0.5s ease-out ${navItems.length * 0.1}s backwards`
                 : 'none',
             }}
+            onClick={() => setIsMobileMenuOpen(false)}
           >
-            <Ticket className="w-5 h-5" />
-            Billetterie Bientôt
-          </button>
+            <Ticket className="w-6 h-6" />
+            <span>Réserver mes billets</span>
+          </a>
 
           {/* Info Items in Mobile Menu */}
           <div
