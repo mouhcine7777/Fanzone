@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { Tv, Gamepad2, UtensilsCrossed, Camera, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Tv, UtensilsCrossed, Camera, ChevronLeft, ChevronRight } from 'lucide-react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -20,16 +20,6 @@ export default function EspacesSliderSection() {
       description: "Immersion totale, écrans géants et son surround.",
       image: "cube360.jpg",
       color: "#0dc768"
-    },
-    {
-      id: 2,
-      icon: Gamepad2,
-      title: "GAMING ZONE",
-      subtitle: "Tournois & Challenges",
-      description: "Consoles new génération, jeux immersifs et challenges e-sport.",
-      image: "gaming.jpg",
-      decoration: "decoration5.png",
-      color: "#8b0000"
     },
     {
       id: 3,
@@ -108,56 +98,34 @@ export default function EspacesSliderSection() {
           </p>
         </div>
 
-        {/* Swiper Container with External Navigation */}
-        <div className="relative max-w-7xl mx-auto">
-          {/* Desktop Navigation Arrows - Outside slider but on sides */}
-          <div className="hidden lg:block">
-            <button
-              onClick={() => swiperRef.current?.swiper.slidePrev()}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-20 w-12 h-12 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-black hover:bg-[#0dc768] transition-all duration-300 hover:scale-110"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
+        {/* Mobile Navigation Arrows - Only visible on mobile */}
+        <div className="lg:hidden flex justify-center items-center gap-4 mb-6">
+          <button
+            onClick={() => swiperRef.current?.swiper.slidePrev()}
+            className="w-12 h-12 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-black hover:bg-[#0dc768] transition-all duration-300 hover:scale-110"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
 
-            <button
-              onClick={() => swiperRef.current?.swiper.slideNext()}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-20 w-12 h-12 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-black hover:bg-[#0dc768] transition-all duration-300 hover:scale-110"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
+          <button
+            onClick={() => swiperRef.current?.swiper.slideNext()}
+            className="w-12 h-12 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-black hover:bg-[#0dc768] transition-all duration-300 hover:scale-110"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
 
-          {/* Mobile Navigation Arrows - Inside container */}
-          <div className="lg:hidden flex justify-center items-center gap-4 mb-6">
-            <button
-              onClick={() => swiperRef.current?.swiper.slidePrev()}
-              className="w-12 h-12 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-black hover:bg-[#0dc768] transition-all duration-300 hover:scale-110"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <button
-              onClick={() => swiperRef.current?.swiper.slideNext()}
-              className="w-12 h-12 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-black hover:bg-[#0dc768] transition-all duration-300 hover:scale-110"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
-
-          {/* Swiper Slider */}
+        {/* Mobile & Tablet: Swiper Slider */}
+        <div className="lg:hidden relative max-w-7xl mx-auto">
           <Swiper
             ref={swiperRef}
             modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={30}
+            spaceBetween={20}
             slidesPerView={1}
             breakpoints={{
               640: {
                 slidesPerView: 2,
                 spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
               },
             }}
             pagination={false}
@@ -185,12 +153,12 @@ export default function EspacesSliderSection() {
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:from-black/90 transition-all duration-500" />
 
-                    {/* Decoration Image - Top Right Corner - Only for cards with decoration */}
+                    {/* Decoration Image - Top Right Corner */}
                     {espace.decoration && (
                       <img
                         src={`/${espace.decoration}`}
                         alt=""
-                        className="absolute top-0 right-0 w-20 sm:w-24 md:w-28 pointer-events-none z-10 opacity-90"
+                        className="absolute top-0 right-0 w-20 sm:w-24 pointer-events-none z-10 opacity-90"
                       />
                     )}
 
@@ -244,7 +212,7 @@ export default function EspacesSliderSection() {
             })}
           </Swiper>
 
-          {/* External Pagination Dots - Bold Style */}
+          {/* Pagination Dots - Mobile Only */}
           <div className="flex justify-center items-center gap-3 mt-8">
             {espaces.map((_, index) => (
               <button
@@ -257,6 +225,83 @@ export default function EspacesSliderSection() {
                 }`}
               />
             ))}
+          </div>
+        </div>
+
+        {/* Desktop: Static Grid (3 cards side by side) */}
+        <div className="hidden lg:block max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 gap-8">
+            {espaces.map((espace) => {
+              const Icon = espace.icon;
+              return (
+                <div key={espace.id} className="group relative overflow-hidden h-[500px] cursor-pointer border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-300">
+                  {/* Background Image */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
+                    style={{
+                      backgroundImage: `url(/${espace.image})`,
+                    }}
+                  />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:from-black/90 transition-all duration-500" />
+
+                  {/* Decoration Image - Top Right Corner */}
+                  {espace.decoration && (
+                    <img
+                      src={`/${espace.decoration}`}
+                      alt=""
+                      className="absolute top-0 right-0 w-28 pointer-events-none z-10 opacity-90"
+                    />
+                  )}
+
+                  {/* Content */}
+                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                    {/* Top Icon */}
+                    <div className="flex justify-start">
+                      <div className="transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                        <div
+                          className="inline-flex items-center justify-center w-18 h-18 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                          style={{
+                            backgroundColor: espace.color
+                          }}
+                        >
+                          <Icon className="w-9 h-9 text-white" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom Content */}
+                    <div className="space-y-3">
+                      <div>
+                        <h3 className="text-4xl font-black text-white mb-2 leading-tight uppercase">
+                          {espace.title}
+                        </h3>
+                        <div 
+                          className="inline-block px-3 py-1 mb-3 border-2 border-black font-black text-sm uppercase"
+                          style={{ backgroundColor: espace.color, color: 'white' }}
+                        >
+                          {espace.subtitle}
+                        </div>
+                        <p className="text-white text-base leading-relaxed font-medium">
+                          {espace.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Decorative Corner Accent */}
+                  <div
+                    className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4"
+                    style={{ borderColor: espace.color }}
+                  />
+                  <div
+                    className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4"
+                    style={{ borderColor: espace.color }}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
